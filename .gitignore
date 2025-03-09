@@ -1,0 +1,9 @@
+wandb/
+__pycache__/
+cc_checkpoints/
+*.pt
+test.ipynb
+crosscoder_test.ipynb
+crosscoder.ipynb
+figs/
+results/
