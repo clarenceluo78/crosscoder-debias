@@ -223,11 +223,14 @@ def compile_all_tokens(
     Returns:
         torch.Tensor: A tensor containing all tokenized sequences.
     """
+
+    model_log_name = model_name.split("/")[-1] if "/" in model_name else model_name
+
     # Create default save path if none provided
     if save_dir is None:
         save_dir = f"all_tokens_seq{sequence_length}_batch{batch_size}_max{max_batches}.pt"
     else:
-        save_dir = f"{save_dir}/all_tokens_seq{sequence_length}_batch{batch_size}_max{max_batches}.pt"
+        save_dir = f"{save_dir}/{model_log_name}_all_tokens_seq{sequence_length}_batch{batch_size}_max{max_batches}.pt"
     save_path = Path(save_dir)
 
     # Check if tensor already exists
